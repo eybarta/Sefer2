@@ -10,8 +10,7 @@
   ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "chmod +x scripts/setup.sh && ./scripts/setup.sh",
-    "setup": "pnpm install",
+    "setup": "chmod +x scripts/setup.sh && ./scripts/setup.sh",
     "dev": "turbo run dev",
     "dev:2": "chmod +x scripts/dev.sh && ./scripts/dev.sh",
     "build": "turbo run build",
