@@ -10,24 +10,17 @@ A modern Hebrew Scripture reader with AI-enhanced features for deeper textual un
 - Real-time commentary and annotations
 - Multi-platform support via React Native
 
-## Project Structure
-
-- `client/`: React Native Expo application
-- `server/`: NestJS backend service
-- `ai_service/`: FastAPI AI processing service
-- `db/`: Database migrations and schemas
-- `tests/`: Comprehensive test suite
-
-## Setup Instructions
+## Development
 
 ### Prerequisites
 
-- Node.js (v16 or later)
+- Node.js (v18 or later)
+- PNPM (v8 or later)
 - Python 3.8+
-- PostgreSQL
-- Redis
+- Docker and Docker Compose
+- tmux
 
-### Installation
+### Quick Start
 
 1. Clone the repository:
 ```bash
@@ -35,10 +28,45 @@ git clone https://github.com/eybarta/Sefer2.git
 cd Sefer2
 ```
 
-2. Follow setup instructions in each service directory:
-- `client/README.md` for React Native setup
-- `server/README.md` for NestJS backend
-- `ai_service/README.md` for AI service
+2. Install dependencies:
+```bash
+pnpm install
+```
+
+3. Start all services:
+```bash
+# Option 1: Start all services in separate windows
+pnpm dev
+
+# Option 2: Start with tmux layout (server & AI side by side, others minimized)
+pnpm dev:2
+```
+
+### Development Layout
+
+The `dev:2` command sets up a tmux session with:
+- Server and AI service terminals side by side
+- Client and database services in minimized windows
+- Automatic cleanup on exit
+
+### Available Commands
+
+- `pnpm dev`: Start all services individually
+- `pnpm dev:2`: Start services with tmux layout
+- `pnpm build`: Build all packages
+- `pnpm test`: Run tests
+- `pnpm lint`: Run linting
+
+## Project Structure
+
+```
+.
+├── client/          # React Native Expo application
+├── server/          # NestJS backend service
+├── ai_service/      # FastAPI AI processing service
+├── scripts/         # Development and utility scripts
+└── docker-compose.yml
+```
 
 ## Architecture
 
