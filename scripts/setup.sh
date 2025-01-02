@@ -7,16 +7,6 @@ NC='\033[0m' # No Color
 
 echo -e "${BLUE}Setting up Sefer2 development environment...${NC}\n"
 
-# Install client dependencies
-echo -e "${BLUE}Installing client dependencies...${NC}"
-cd client && pnpm install
-cd ..
-
-# Install server dependencies
-echo -e "${BLUE}Installing server dependencies...${NC}"
-cd server && pnpm install
-cd ..
-
 # Setup Python virtual environment and install dependencies
 echo -e "\n${BLUE}Setting up Python environment...${NC}"
 cd ai_service
