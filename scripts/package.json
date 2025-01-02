@@ -1,0 +1,8 @@
+{
+  "name": "@sefer2/scripts",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Scripts package - no dev command'"
+  }
+}
