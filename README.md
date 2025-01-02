@@ -15,12 +15,11 @@ A modern Hebrew Scripture reader with AI-enhanced features for deeper textual un
 ### Prerequisites
 
 - Node.js (v18 or later)
-- PNPM (v8 or later)
 - Python 3.8+
 - Docker and Docker Compose
 - tmux
 
-### Quick Start
+### Setup
 
 1. Clone the repository:
 ```bash
@@ -28,12 +27,19 @@ git clone https://github.com/eybarta/Sefer2.git
 cd Sefer2
 ```
 
-2. Install dependencies:
+2. Run the setup script:
 ```bash
-pnpm install
+pnpm setup
 ```
+This will:
+- Install pnpm if not present
+- Install all Node.js dependencies
+- Set up Python virtual environment and dependencies
+- Pull required Docker images
 
-3. Start all services:
+### Development
+
+Start the development environment:
 ```bash
 # Option 1: Start all services in separate windows
 pnpm dev
@@ -67,11 +73,13 @@ For detailed tmux documentation, see [docs/TMUX.md](docs/TMUX.md)
 
 ### Available Commands
 
+- `pnpm setup`: Install all dependencies and prepare development environment
 - `pnpm dev`: Start all services individually
 - `pnpm dev:2`: Start services with tmux layout
 - `pnpm build`: Build all packages
 - `pnpm test`: Run tests
 - `pnpm lint`: Run linting
+- `pnpm clean`: Remove all dependencies and build artifacts
 
 ## Project Structure
 
