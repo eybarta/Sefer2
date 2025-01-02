@@ -7,15 +7,15 @@ NC='\033[0m' # No Color
 
 echo -e "${BLUE}Setting up Sefer2 development environment...${NC}\n"
 
-# Install pnpm if not installed
-if ! command -v pnpm &> /dev/null; then
-    echo -e "${BLUE}Installing pnpm...${NC}"
-    npm install -g pnpm
-fi
+# Install client dependencies
+echo -e "${BLUE}Installing client dependencies...${NC}"
+cd client && pnpm install
+cd ..
 
-# Install root dependencies
-echo -e "${BLUE}Installing root dependencies...${NC}"
-pnpm install
+# Install server dependencies
+echo -e "${BLUE}Installing server dependencies...${NC}"
+cd server && pnpm install
+cd ..
 
 # Setup Python virtual environment and install dependencies
 echo -e "\n${BLUE}Setting up Python environment...${NC}"
