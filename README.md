@@ -42,12 +42,28 @@ pnpm dev
 pnpm dev:2
 ```
 
-### Development Layout
+### Development with tmux
 
-The `dev:2` command sets up a tmux session with:
-- Server and AI service terminals side by side
-- Client and database services in minimized windows
-- Automatic cleanup on exit
+The `dev:2` command creates a development environment using tmux:
+
+```
+┌─────────────────┬─────────────────┐
+│                 │                 │
+│    NestJS       │   FastAPI       │
+│    Server       │   AI Service    │
+│                 │                 │
+└─────────────────┴─────────────────┘
++ Minimized windows for client and database
+```
+
+#### Essential tmux Commands
+- `Ctrl-B + d`: Detach from session (keeps services running)
+- `Ctrl-B + arrow keys`: Navigate between panes
+- `Ctrl-B + 0-9`: Switch to window number
+- `Ctrl-B + x`: Close current pane
+- `Ctrl-B + z`: Zoom in/out of current pane
+
+For detailed tmux documentation, see [docs/TMUX.md](docs/TMUX.md)
 
 ### Available Commands
 
@@ -65,17 +81,9 @@ The `dev:2` command sets up a tmux session with:
 ├── server/          # NestJS backend service
 ├── ai_service/      # FastAPI AI processing service
 ├── scripts/         # Development and utility scripts
+├── docs/            # Documentation and guides
 └── docker-compose.yml
 ```
-
-## Architecture
-
-The application follows a microservices architecture:
-- React Native client for cross-platform support
-- NestJS backend for API gateway and business logic
-- FastAPI service for AI processing
-- PostgreSQL for persistent storage
-- Redis for caching
 
 ## License
 
