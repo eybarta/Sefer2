@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+venv/
+
+# Build
+dist/
+build/
+
+# Environment
+.env
+.env.local
+
+# IDE
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Cache
+*.pyc
+__pycache__/
+.expo/
+
+# macOS
+.DS_Store
+
+# Testing
+coverage/
+
+# Local env files
+.env*.local
+
+# Database
+*.sqlite
