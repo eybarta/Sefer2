@@ -9,7 +9,9 @@
     "scripts"
   ],
   "scripts": {
-    "setup": "chmod +x scripts/setup.sh && ./scripts/setup.sh",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "chmod +x scripts/setup.sh && ./scripts/setup.sh",
+    "setup": "pnpm install",
     "dev": "turbo run dev",
     "dev:2": "chmod +x scripts/dev.sh && ./scripts/dev.sh",
     "build": "turbo run build",
@@ -17,7 +19,7 @@
     "lint": "turbo run lint",
     "clean": "turbo run clean && rm -rf node_modules **/node_modules ai_service/venv"
   },
-  "devDependencies": {
+  "dependencies": {
     "turbo": "^1.10.16"
   },
   "engines": {
